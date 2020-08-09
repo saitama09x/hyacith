@@ -2,18 +2,18 @@
 <div class='slider-wrapper'>
 	<div class='slider-content'>
 		<div id='sliders'>
-			<transition :name='sliderName' :duration="5000">
+			<transition :name='sliderName' :duration="1000">
 				<div class='slide-item' v-if="sliderIndex == 0" key="item0">
-					<img src="/images/webpage/hyacinth-mockups.png" width="100%" />
+					<q-img src="/images/webpage/hyacinth-mockups.png" width="100%" style="max-height:260px;" />
 				</div>
 				<div class='slide-item' v-else-if="sliderIndex == 1" key="item1">
-					<img src="/images/webpage/IBC-fuel-logistics-mockup.png" width="100%" />
+					<q-img src="/images/webpage/IBC-fuel-logistics-mockup.png" width="100%" style="max-height:260px;"/>
 				</div>
 				<div class='slide-item' v-else-if="sliderIndex == 2" key="item2">
-					<img src="/images/webpage/IBC-tablet-mockup.png" width="100%" />
+					<q-img src="/images/webpage/IBC-tablet-mockup.png" width="100%" style="max-height:260px;" />
 				</div>
 				<div class='slide-item' v-else-if="sliderIndex == 3" key="item3">
-					<img src="/images/webpage/medicine-reminder-mockup.png" width="100%" />
+					<q-img src="/images/webpage/medicine-reminder-mockup.png" width="100%" style="max-height:260px;"/>
 				</div>
 			</transition>
 			<div class='controls'>
@@ -35,16 +35,15 @@
 }
 
 #sliders{
-	width: 90%;
+	width: 95%;
     overflow-x: hidden;
     margin: auto;
     position: relative;
-    height: 340px;
+    height: 260px;
 }
 
 .slide-item{
 	position: absolute;
-    height: 240px;
     left: 14px;
     width: 330px;
 }
@@ -53,7 +52,7 @@
     position: absolute;
     width: 100%;
     left: 0px;
-    top: 46%;
+    top: 50%;
 }
 .slider-wrapper .controls .las{
 	font-size: 30pt;

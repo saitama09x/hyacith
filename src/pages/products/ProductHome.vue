@@ -1,4 +1,6 @@
 <template>
+<q-page-container>
+	<q-page>
 <div id="page">
 	<div class='page-content'>
 		<Breadcrumbs :route="route" />
@@ -15,7 +17,7 @@
 		<div class='section section-1'>
 			<div class='module'>
 				<div class='row'>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<div class="item-wrapper">
 							<div class='icon-shape red'></div>
 							<div class='image-feat'>
@@ -32,7 +34,7 @@
 							</div>
 						</div>
 					</div>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<div class="item-wrapper">
 							<div class='icon-shape blue'></div>
 							<div class='image-feat'>
@@ -47,7 +49,7 @@
 					</div>
 				</div>
 		<div class='row'>
-				<div class='col'>
+				<div class='col-md col-xs-12'>
 					<div class="item-wrapper">
 						<div class='icon-shape red'></div>
 						<div class='image-feat'>
@@ -60,7 +62,7 @@
 						</div>
 					</div>
 				</div>
-				<div class='col'>
+				<div class='col-md col-xs-12'>
 					<div class="item-wrapper">
 						<div class='icon-shape blue'></div>
 						<div class='image-feat'>
@@ -78,6 +80,8 @@
 	</div>
 </div>
 </div>
+</q-page>
+</q-page-container>
 </template>
 <style scoped>
 #page{

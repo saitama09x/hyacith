@@ -91,6 +91,9 @@
   .widget-2{
     display:none;
   }
+  #footer{
+    bottom:25px;
+  }
 }
 </style>
 <script>

@@ -1,20 +1,17 @@
 <template>
 <div id="page">
-<div class='page-overlay WebIndex' ref="bgaction" :style="{ height : minHeight + 'px'}">
-<div class='overlay-bg'></div>
+<div class='page-overlay' ref="bgaction" :style="{ height : minHeight + 'px'}">
 <div id='page-content'>
   <div class='section section-0 margin-center'>
-  		<PageTwo />
+  <WebSlider />
+  <div class='text-module q-pa-md'>
+    <h4 class="q-my-sm">Responsive Design anywhere you wish</h4>
+    <p>A lot of people says that a responsive design is a good practice in the technology. Whether it's on a desktop, tablet or phone. We can create a better design experience for you. Need to see more?</p>
+    <p>Give a tap on the button and take a tour from our projects that we have created to our clients</p>
+  </div>
   </div>
 </div>
 
-<footer id='footer'>
-    <div class='footer-wrapper'>
-      <div class='widget widget-0 text-center'>        
-        <a @click="actionNav('MobPageThree')" class='arrow'><i class="las la-angle-double-down"></i></a>
-      </div>
-    </div>
-  </footer>
   </div>
 </div>
 
@@ -22,14 +19,30 @@
 
 <style scoped>
 
+.page-overlay{
+  background-image: url("/bgimages/blue-projects-mobile.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+  padding-top:15%;
+}
+
+.section h4{
+  padding:0px;
+}
+
+.section .text-module{
+    font-size:17px;
+}
 
 </style>
 <script>
-import PageTwo from 'pages/webpage/PageTwo.vue'
+
+import WebSlider from 'components/WebSlider'
+
 export default {
   name: 'MobPageTwo',
    components : {
-      PageTwo
+      WebSlider
   },
   props : {
     actionNav : {
@@ -40,6 +53,9 @@ export default {
     },
     minHeight : {
       type : Number
+    },
+    setNav : {
+      type : Function,
     }
   },
   data () {
@@ -49,6 +65,9 @@ export default {
       animejs : null,
       clientH : 0
     }
+  },
+  created : function(){
+    this.setNav('PageTwo')
   },
   methods : {
    

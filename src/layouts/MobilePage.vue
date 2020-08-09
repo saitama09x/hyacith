@@ -13,7 +13,7 @@
     v-on:leave="leave"
     v-on:after-leave="afterLeave" >
 
-  <components v-bind:is="nav" :actionNav="actionNav" :minHeight="clientH"/>
+  <components v-bind:is="nav" :actionNav="actionNav" :setNav="navigation" :minHeight="clientH"/>
 
 </transition>
 <div id='right-sidebar' class='' :class="MenuActive">
@@ -60,6 +60,8 @@ import WebMenuNav from 'components/WebMenuNav.vue'
 import MobPageOne from 'pages/mobile/MobPageOne.vue'
 import MobPageTwo from 'pages/mobile/MobPageTwo.vue'
 import MobPageThree from 'pages/mobile/MobPageThree.vue'
+import MobPageFour from 'pages/mobile/MobPageFour.vue'
+import MobPageFive from 'pages/mobile/MobPageFive.vue'
 
 export default {
   name: 'MobilePage',
@@ -70,6 +72,8 @@ export default {
     'PageOne' : MobPageOne,
     'PageTwo' : MobPageTwo,
     'PageThree' : MobPageThree,
+    'PageFour' : MobPageFour,
+    'PageFive' : MobPageFive
   },
   data () {
   return {

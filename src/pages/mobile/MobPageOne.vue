@@ -1,5 +1,5 @@
 <template>
-  <PageOne :minHeight="minHeight"/>
+  <PageOne :minHeight="minHeight" :setNav="setNav" />
 </template>
 
 <style scoped>
@@ -41,6 +41,9 @@ export default {
   	},
     minHeight : {
       type : Number
+    },
+    setNav : {
+        type : Function,
     }
   },
   data () {
