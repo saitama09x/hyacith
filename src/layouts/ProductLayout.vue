@@ -24,10 +24,21 @@
 .menu-wrapper .menu-action{
 	color:gray;
 }
+
 #right-sidebar{
 	position:fixed;
 }
 
+@media(max-width:980px){
+  #right-sidebar{
+     right: -200px;
+     width: 200px
+  }
+
+  #right-sidebar.active-nav{
+    right:0px;
+  }
+}
 
 </style>
 <script>

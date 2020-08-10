@@ -26,5 +26,8 @@ quasar build
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 
-### Output
+### Desktop Version
 ![alt text](https://github.com/saitama09x/hyacith/blob/master/Quasar-App.gif "Desktop")
+
+### Mobile Version
+![alt text](https://github.com/saitama09x/hyacith/blob/master/Quasar-App-mobile.gif "Mobile")
