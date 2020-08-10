@@ -4,6 +4,7 @@
 <label>Ready to work?</label>
 <h2>Let's create a whole new experience!</h2>
 <q-btn rounded color="white" text-color="black" label="More" class="readbtn"/>
+
 </div>
 
 </template>
@@ -22,6 +23,18 @@
 .widget-1 label{
 	color: white;
     font-size: 17pt;
+}
+
+@media(max-width:980px){
+
+  .widget-1 h2{
+    font-size: 25pt;
+    line-height: 35px;
+  }
+
+  .q-btn{
+  	margin:20px;
+  }
 }
 </style>
 <script>

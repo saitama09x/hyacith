@@ -115,7 +115,7 @@ export default {
   	  'PageTwo' : PageTwo,
       'PageThree' : PageThree,
       'PageFour' : PageFour,
-      'PageFive' : PageFive
+      'PageFive' : PageFive,
   },
   data () {
   	return {

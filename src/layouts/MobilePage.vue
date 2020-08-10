@@ -73,7 +73,7 @@ export default {
     'PageTwo' : MobPageTwo,
     'PageThree' : MobPageThree,
     'PageFour' : MobPageFour,
-    'PageFive' : MobPageFive
+    'PageFive' : MobPageFive,
   },
   data () {
   return {

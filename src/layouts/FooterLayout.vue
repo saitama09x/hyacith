@@ -94,6 +94,31 @@
   #footer{
     bottom:25px;
   }
+  .product-layout #footer .flex-wrap{
+    flex-wrap:wrap;
+  }
+  #footer .widget{
+    width:100%;
+  }
+  
+  .product-layout .widget-1{
+    order:1;
+  }
+  .product-layout .widget-2{
+    order:2;
+  }
+  .product-layout .widget-0{
+    order:3;
+  }
+  .product-layout #footer .social-icons{
+    align-items: initial;
+    justify-content: center;
+  }
+
+  .product-layout #footer .copyright-text{
+     align-items: initial;
+     justify-content: center;
+  }
 }
 </style>
 <script>

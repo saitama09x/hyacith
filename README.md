@@ -24,3 +24,7 @@ quasar build
 
 ### Customize the configuration
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+
+
+### Output
+![alt text](https://github.com/saitama09x/hyacith/Quasar-App.gif "Desktop")

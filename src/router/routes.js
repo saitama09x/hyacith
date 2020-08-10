@@ -37,6 +37,11 @@ const routes = [
      ]
   },
   {
+    path : '/error-404',
+    name : 'error',
+    component: () => import('layouts/UnderDev.vue')
+  },
+  {
     path: '*',
     component: () => import('pages/Error404.vue')
   }

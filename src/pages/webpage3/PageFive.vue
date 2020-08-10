@@ -1,5 +1,5 @@
 <template>
-<div class='page-overlay WebIndex' :style="{ minHeight : minHeight + 'px'}">
+<div class='page-overlay' :style="{ minHeight : minHeight + 'px'}">
 
 <div id='page-content'>
 
