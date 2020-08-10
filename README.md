@@ -27,4 +27,4 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 
 ### Output
-![alt text](https://github.com/saitama09x/hyacith/Quasar-App.gif "Desktop")
+![alt text](https://github.com/saitama09x/hyacith/blob/master/Quasar-App.gif "Desktop")
