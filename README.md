@@ -31,3 +31,6 @@ See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
 
 ### Mobile Version
 ![alt text](https://github.com/saitama09x/hyacith/blob/master/Quasar-App-mobile.gif "Mobile")
+
+### Responsive
+![alt text](https://github.com/saitama09x/hyacith/blob/master/Quasar-App-res.gif "Responsive")
