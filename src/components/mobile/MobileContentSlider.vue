@@ -5,7 +5,7 @@
 			<transition :name='sliderName' :duration="5000">
 				  <MobileSliderPage v-if="sliderIndex == 0" :key="0">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/UI-icon.png" />
+                <q-img src="/images/webpage/UI-icon.png" style="min-height:100px;width:100px;"/>
             </template>
             <template v-slot:slider-text>
                 <div class="text-h6 text-center">Data Research</div>
@@ -14,7 +14,7 @@
           </MobileSliderPage>
           <MobileSliderPage v-if="sliderIndex == 1" :key="1">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/UX-icon.png" />
+                <q-img src="/images/webpage/UX-icon.png" style="max-height:100px;width:100px;"/>
             </template>
             <template v-slot:slider-text>
                 <div class="text-h6 text-center">User Interface Design</div>
@@ -23,7 +23,7 @@
           </MobileSliderPage>
           <MobileSliderPage v-if="sliderIndex == 2" :key="2">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/Data-research-icon.png" />
+                <q-img src="/images/webpage/Data-research-icon.png" style="max-height:100px;width:100px;"/>
             </template>
             <template v-slot:slider-text>
                 <div class="text-h6 text-center">User Experience Design</div>
@@ -33,9 +33,9 @@
 			</transition>
 			<div class='control-wrapper'>
           <div class='col controls'>
-            <a @click="controlSlider(0)"><i class="las la-circle"></i></a>
-            <a @click="controlSlider(1)"><i class="las la-circle"></i></a>
-            <a @click="controlSlider(2)"><i class="las la-circle"></i></a>
+            <a @click="controlSlider(0)"><i class="las la-circle" :class="{ active : (sliderIndex == 0) ? true : false }"></i></a>
+            <a @click="controlSlider(1)"><i class="las la-circle" :class="{ active : (sliderIndex == 1) ? true : false}"></i></a>
+            <a @click="controlSlider(2)"><i class="las la-circle" :class="{ active : (sliderIndex == 2) ? true : false} "></i></a>
     			</div>
       </div>
 		</div>
@@ -88,6 +88,12 @@
 	font-size: 21pt;
   color: white;
 }
+
+.slider-wrapper .controls .active{
+  background-color:white;
+  border-radius:30px;
+}
+
 .slider-wrapper .controls .prev{
 	position:absolute;
 	left:0px ;

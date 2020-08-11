@@ -10,7 +10,7 @@
                  <div v-html="item.item_content.content"></div>
             </template>
             <template v-slot:slider-image>
-                  <q-img :src="item.item_content.image" :transition="'slide-left'" >
+                  <q-img :src="item.item_content.image" :transition="'slide-left'" style="max-height:400px;max-width:400px;">
                     <template v-slot:loading>
                       <q-spinner-gears color="white" />
                     </template>

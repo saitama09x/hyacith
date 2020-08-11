@@ -29,10 +29,17 @@
 
 @media(max-width:980px){
   #page-content{
-     padding-top:50%; 
+     padding-top:60%; 
   }
+
   .section .module-image{
     width:100%;
+  }
+
+  .page-overlay {
+    background-image: url("/bgimages/purple-home-mobile.png");
+    background-repeat:no-repeat;
+    background-size:cover;
   }
 }
 

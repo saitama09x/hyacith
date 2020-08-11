@@ -14,19 +14,19 @@
 		<div class='section section-1'>
 			<div class='module margin-center'>
 				<div class='row'>
-					<div class='col-md-1'>
+					<div class='col-md-1 col-xs-4'>
 						<label>Client</label>
 						<p><strong>IBC</strong></p>
 					</div>
-					<div class='col-md-2'>
+					<div class='col-md-2 col-xs-4'>
 						<label>Industry</label>
 						<p><strong>Construction</strong></p>
 					</div>
-					<div class='col-md-2'>
+					<div class='col-md-2 col-xs-4'>
 						<label>Project</label>
 						<p><strong>Fuel Logistics</strong></p>
 					</div>
-					<div class='col-md-2'>
+					<div class='col-md-2 col-xs-4'>
 						<label>Platform</label>
 						<p><strong>Tablet</strong></p>
 					</div>
@@ -36,13 +36,13 @@
 		<div class='section section-1'>
 			<div class='module margin-center'>
 				<div class='row'>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<q-img src="/images/webpage/Sign in – 4@2x.png" />
 					</div>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<q-img src="/images/webpage/Home.png" />
 					</div>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<q-img src="/images/webpage/Fuel Issuance – refueled@2x.png" />
 					</div>
 				</div>
@@ -97,16 +97,16 @@
 			</div>
 			<div class='module margin-center'>
 				<div class='row q-gutter-sm'>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<img src="/images/webpage/Home.png" width="100%"/>
 					</div>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<img src="/images/webpage/Home.png" width="100%" />
 					</div>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<img src="/images/webpage/Home.png" width="100%"/>
 					</div>
-					<div class='col'>
+					<div class='col-md col-xs-12'>
 						<img src="/images/webpage/Home.png" width="100%"/>
 					</div>
 				</div>
@@ -138,6 +138,11 @@
 }
 .section-4 .module{
 	width:100%;
+}
+@media(max-width:980px){
+	.product-overview{
+		padding:0px 24px;
+	}
 }
 </style>
 <script>

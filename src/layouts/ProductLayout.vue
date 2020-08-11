@@ -17,11 +17,12 @@
 <style scoped>
 
 #header{
-	position:unset;
-	height:auto;
+  position:unset;
+  height:auto;
+  padding:0px 24px 24px;
 }
 
-.menu-wrapper .menu-action{
+#header .menu-wrapper .menu-action{
 	color:gray;
 }
 

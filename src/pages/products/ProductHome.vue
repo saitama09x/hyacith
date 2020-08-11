@@ -3,6 +3,7 @@
 <q-page>
 <div id="page">
 	<div class='page-content'>
+		<div class='page-overlay'>
 		<Breadcrumbs :route="route" />
 		<div class='section section-0 margin-center'>
 			<q-tabs v-model="tab" no-caps class="text-gray" indicator-color="pink-5">
@@ -27,6 +28,7 @@
 						<ProductLists />
 				</q-tab-panel>
 			</q-tab-panels>
+	</div>
 	</div>
 </div>
 </div>

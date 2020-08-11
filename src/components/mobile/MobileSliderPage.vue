@@ -41,7 +41,7 @@
 
 .section .module-image{
   text-align:center;
-  width:100px;
+  width:90%;
 }
 
 .section .module-image img{
