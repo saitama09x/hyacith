@@ -1,16 +1,16 @@
 <template>
 <div id="page">
-<div class='page-overlay' ref="bgaction" :style="{ height : minHeight + 'px'}">
+<div class='page-overlay' ref="bgaction">
 <div id='page-content'>
-  <div class='section section-0 margin-center'>
-  <div class='module module-image margin-center page-3'>
-    <q-img src="/images/webpage/3D Illustration-Product Development-Skin-01.png" :transition="'slide-left'" style="min-height:150px;" >
+  <div class='row content-center' :style="{ height : minHeight + 'px'}">
+  <div class='col-md col-xs-12 text-center top-image'>
+    <q-img src="/images/webpage/3D Illustration-Product Development-Skin-01.png" :transition="'slide-left'">
       <template v-slot:loading>
         <q-spinner-gears color="white" />
       </template>
    </q-img>
   </div>
-  <div class='module text-module q-pa-md q-mx-auto'>
+  <div class='col-md col-xs-12 q-pa-md q-mx-auto text-white'>
     <h4 class="q-my-sm">We Design Stuff to create better experience</h4>
     <p>We are a group of young creative individuals who has passion in creating better experiences for our clients as we see to be better creators for them. What to know more about us?</p>
     <p>Check our portfolio through these links:</p>
@@ -22,6 +22,7 @@
     </div>
   </div>
   </div>
+
 </div>
 
   </div>
@@ -31,21 +32,15 @@
 
 <style scoped>
 
+#page-content{
+  padding-top:5%;
+}
+
 #page .page-overlay{
   background-image: url("/bgimages/red-about-us-mobile.png");
   background-repeat:no-repeat;
   background-size:cover;
   position:relative;
-  padding-top:15%;
-}
-
-#page-content{
-  padding-top:20%;
-}
-
-.text-module{
-  font-size:17px;
-  width:100%;
 }
 
 .text-module h4{
@@ -59,6 +54,30 @@
 
 .social-icons{
   font-size:20pt;
+}
+
+.q-img{
+  max-height :350px;
+  max-width:400px;
+  width:80%;
+}
+
+@media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
+  h4{
+    font-size:15pt;
+  }
+  #page-content{
+    padding-top:0%;
+  }
+  
+  .row{
+    padding-top: 14%;
+  }
+
+  .row .col-md{
+    width:50%;
+  }
+
 }
 </style>
 <script>

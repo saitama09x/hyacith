@@ -2,7 +2,7 @@
 <div id="page">
 <div class='page-overlay' ref="bgaction" :style="{ height : minHeight + 'px'}">
 <div id='page-content'>
-  <div class='section section-0 margin-center'>
+  <div class='section section-0 q-mx-auto'>
   <div class='module module-image margin-center page-3'>
     <q-img src="/images/webpage/3D Illustration-Product Development-Skin-01.png" :transition="'slide-left'" >
       <template v-slot:loading>
@@ -30,6 +30,9 @@
 </template>
 
 <style scoped>
+
+
+
 
 #page .page-overlay{
   background-image: url("/bgimages/red-about-us-mobile.png");

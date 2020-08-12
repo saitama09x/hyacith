@@ -2,11 +2,13 @@
 <div id="page">
 <div class='page-overlay' ref="bgaction" :style="{ height : minHeight + 'px'}">
     <div id='page-content'>
-       <div class='section section-0 margin-center'>
+      <div class='row'>
+        <div class='col-md col-xs-12 text-center'>
             <div class='module module-image margin-center page-3'>
             <q-img src="/images/webpage/3D-characters.png" style="max-height:200px;"/>
             </div>
-            <div class='module text-module q-mx-auto'>
+          </div>
+          <div class='col-md col-xs-12 text-center q-mx-auto'>
             <h4 class='section-title q-my-sm'>Got an idea to work with? <br /> Feel free to contact us.</h4>
             <p>Call us for more information</p>
             <p><strong>(033) 500 1749</strong></p>

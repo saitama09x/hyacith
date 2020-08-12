@@ -53,7 +53,7 @@
 
 <script>
 
-import Header from 'layouts/HeaderLayout.vue'
+import Header from 'layouts/mobile/HeaderMobile.vue'
 import Footer from 'layouts/FooterLayout.vue'
 import WebMenuNav from 'components/WebMenuNav.vue'
 import MobPageOne from 'pages/mobile2/MobPageOne.vue'

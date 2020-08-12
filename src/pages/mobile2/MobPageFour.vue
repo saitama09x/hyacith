@@ -1,14 +1,16 @@
 <template>
 <div id="page">
-<div class='page-overlay' ref="bgaction" :style="{ height : minHeight + 'px'}">
+<div class='page-overlay' ref="bgaction" >
     <div id='page-content'>
-       <div class='section section-0 margin-center'>
+      <div class='row content-center' :style="{ height : minHeight + 'px'}">
+       <div class='col-md-12 col-xs-12'>
           <div class='module text-module q-mx-auto'>
               <h4 class='text-center'>We provide excellent services with professional practice.</h4>
           </div>
       </div>
-      <div class='section section-1 margin-center'>
+      <div class='col-md-12 col-xs-12'>
           <MobileContentSlider :carousel="carousel" />
+      </div>
       </div>
     </div>
   </div>
@@ -19,7 +21,9 @@
 <style scoped>
 
 #page-content{
-  padding-top:18%;
+  height: 100%;
+  width: 100%;
+  padding-top:2%;
 }
 
 #page .page-overlay{
@@ -27,7 +31,6 @@
   background-repeat:no-repeat;
   background-size:cover;
   position:relative;
-  padding-top:22%;
 }
 
 .text-module{

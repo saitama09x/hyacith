@@ -29,7 +29,12 @@
 
 @media(max-width:980px){
   #page-content{
-     padding-top:60%; 
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .section .module-image{

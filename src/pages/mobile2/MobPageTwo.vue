@@ -1,8 +1,8 @@
 <template>
 <div id="page">
-<div class='page-overlay' ref="bgaction" :style="{ height : minHeight + 'px'}">
+<div class='page-overlay' ref="bgaction" >
 <div id='page-content'>
-  <div class='section section-0 margin-center'>
+  <div class='row content-center' :style="{ height : minHeight + 'px'}" >
     <MobileContentSlider2 />
   </div>
 </div>
@@ -18,7 +18,6 @@
   background-image: url("/bgimages/blue-projects-mobile.png");
   background-repeat:no-repeat;
   background-size:cover;
-  padding-top:15%;
 }
 
 .section h4{
@@ -30,8 +29,11 @@
 }
 
 #page-content{
-  padding-top:30%; 
+    height: 100%;
+    width: 100%;
 }
+
+
 
 </style>
 <script>

@@ -120,6 +120,15 @@
      justify-content: center;
   }
 }
+
+@media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
+
+#footer{
+  bottom:0px;
+  height: 60px;
+}
+
+}
 </style>
 <script>
 import WidgetNavArrow from 'components/widgets/WidgetNavArrow.vue';

@@ -2,35 +2,43 @@
 <div class='slider-wrapper'>
 	<div class='slider-content'>
 		<div id='sliders'>
-			<transition :name='sliderName' :duration="5000">
+        <div class='slider-items'>
+			<transition :name='sliderName' :duration="1000">
 				  <MobileSliderPage v-if="sliderIndex == 0" :key="0">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/UI-icon.png" style="min-height:100px;width:100px;"/>
+                <q-img src="/images/webpage/UI-icon.png"/>
             </template>
             <template v-slot:slider-text>
+              <div>
                 <div class="text-h6 text-center">Data Research</div>
-                <p>We make our user interface design from scratch. We give better insights in designing, whether on web or in app.</p>
+                <p class="text-white text-body1">We make our user interface design from scratch. We give better insights in designing, whether on web or in app.</p>
+              </div>
             </template>
           </MobileSliderPage>
           <MobileSliderPage v-if="sliderIndex == 1" :key="1">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/UX-icon.png" style="max-height:100px;width:100px;"/>
+                <q-img src="/images/webpage/UX-icon.png" />
             </template>
             <template v-slot:slider-text>
+              <div>
                 <div class="text-h6 text-center">User Interface Design</div>
-                <p>We make our user interface design from scratch. We give better insights in designing, whether on web or in app.123</p>
+                <p class="text-white text-body2">We make our user interface design from scratch. We give better insights in designing, whether on web or in app.123</p>
+              </div>
             </template>
           </MobileSliderPage>
           <MobileSliderPage v-if="sliderIndex == 2" :key="2">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/Data-research-icon.png" style="max-height:100px;width:100px;"/>
+                <q-img src="/images/webpage/Data-research-icon.png" />
             </template>
             <template v-slot:slider-text>
+                <div>
                 <div class="text-h6 text-center">User Experience Design</div>
-                <p>We make our user interface design from scratch. We give better insights in designing, whether on web or in app.1234</p>
+                <p class="text-white text-body1">We make our user interface design from scratch. We give better insights in designing, whether on web or in app.1234</p>
+                </div>
             </template>
           </MobileSliderPage>
 			</transition>
+      </div>
 			<div class='control-wrapper'>
           <div class='col controls'>
             <a @click="controlSlider(0)"><i class="las la-circle" :class="{ active : (sliderIndex == 0) ? true : false }"></i></a>
@@ -50,14 +58,20 @@
 .slider-content{
 	width: 100%;
     position: relative;
-    padding:0px 30px;
+    padding:0px 0px;
 }
 
 #sliders{
-	width: 90%;
+	width: 100%;
   margin: auto;
   position: relative;
-  height: 340px;
+  height: 400px;
+}
+
+.slider-items{
+    display:flex;
+    position:relative;
+    justify-content:center;
 }
 
 .text-h6{
@@ -67,26 +81,32 @@
 
 .slide-item{
 	position: absolute;
-    height: 240px;
-    left: 14px;
-    width: 330px;
+  height: 240px;
+  left: 14px;
+  width: 330px;
+}
+
+#sliders .q-img{
+  max-height :270px;
+  max-width:270px;
+  width:70%;
 }
 
 .slider-wrapper .controls{
     position: relative;
-    
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 .slider-wrapper .control-wrapper{
     position: absolute;
-    bottom: 0px;
+    bottom: 0%;
     left:10%;
     width: 80%;
 }
 .slider-wrapper .controls .las{
 	font-size: 21pt;
   color: white;
+  margin:0px 24px;
 }
 
 .slider-wrapper .controls .active{
@@ -102,6 +122,7 @@
 	position:absolute;
 	left:55px ;
 }
+
 .slidernext-enter-active {
   position:absolute;
   transform:translateX(0px);
@@ -117,10 +138,6 @@
   opacity: 0;
   transition: transform .5s, opacity .5s;
 }
-
-.slidernext-leave{
-	/*transform:translateX(0px);*/
-} 
 
 .sliderprev-enter-active {
   position:absolute;
@@ -138,10 +155,67 @@
   transition: transform .5s, opacity .5s;
 }
 
-.sliderprev-leave{
-  /*transform:translateX(540px);*/
-} 
+@media screen and (orientation:landscape) {
 
+
+.slidernext-enter-active {
+  position:absolute;
+  transform:translateX(0px);
+  transition: transform .5s;
+}
+.slidernext-enter{
+  transform:translateX(540px);
+}
+
+.slidernext-leave-active {
+  position:absolute;
+  transform:translateX(-340px);
+  opacity: 0;
+  transition: transform .5s, opacity .5s;
+}
+
+.sliderprev-enter-active {
+  position:absolute;
+  transform:translateX(0px);
+  transition: transform .5s;
+}
+.sliderprev-enter{
+  transform:translateX(-540px);
+}
+
+.sliderprev-leave-active {
+  position:absolute;
+  transform:translateX(340px);
+  opacity: 0;
+  transition: transform .5s, opacity .5s;
+}
+
+}
+
+@media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
+  
+  #sliders{
+    height:250px;
+  }
+
+  #sliders .q-img{
+      width: 50%;
+  }
+
+  #sliders .slider-items{
+    align-items: center;
+    height: 100%;
+  }
+
+}
+
+@media (max-width:480px) and (min-width:320px) and (orientation:portrait) {
+
+  #sliders .q-img{
+      width: 50%;
+  }
+
+}
 </style>
 <script>
 

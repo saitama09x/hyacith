@@ -1,23 +1,53 @@
 <template>
-  <PageOne :minHeight="minHeight" :setNav="setNav" />
+<div class='page-overlay'>
+<div id='page-content' >
+  <div class='row content-center' :style="{ minHeight : minHeight + 'px'}">
+    <div class='col-md-12 col-xs-12'>
+        <div class='module-image text-center'>
+          <q-img src="/images/webpage/Hyacinth-Logo-Official-white.png" />
+        </div>  
+      </div> 
+      <div class='col-md-12 col-xs-12'>
+        <div class='text-module text-center'>
+          <p>Creating a whole new experience</p>
+          <p>for you and your business</p>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
 </template>
 
 <style scoped>
 
+.page-overlay{
+  background-image: url("/bgimages/purple-home-mobile.png");
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+
 #page-content{
-  position:relative;
+    height: 100%;
+    width: 100%;
+    padding:0px 30px;
 }
 
-.section{
-  max-width:80%;
-  width:100%;
-  position:relative;
-  height:500px;
+.q-img{
+  max-height :350px;
+  max-width:900px;
 }
 
-.section .module{
-  padding:0px;
-  width: 80%;
+@media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
+
+  .q-img{
+    max-height :250px;
+    max-width:400px;
+  }
+  
+  .text-module{
+    font-size:15pt;
+  }
+
 }
 
 </style>
@@ -64,7 +94,7 @@ export default {
       }
   },
   created : function(){
-
+      this.setNav('PageOne')
   },
   methods : {
       openMenu : function(){
