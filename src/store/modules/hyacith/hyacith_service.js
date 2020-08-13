@@ -1,7 +1,10 @@
 import model from '../../api/api_model.js'
+import ArangoDB from '../../api/api_model2.js'
 
 const mutation = {
-
+	token(state, token){
+		state.token = token
+	},
 	homeContent(state, content){
 		state.homeContent = content
 	},
@@ -12,7 +15,28 @@ const mutation = {
 
 
 const actions = {
+	getDb({commit}){
+		 return ArangoDB.init().then((token) => {
+		 	commit('token', token)
+		 });
+	},
+	initHomeContent({ dispatch, commit }){
+		return dispatch('getDb').then((res) => {
+			ArangoDB.getCursor("return document('home_template/sliderContent')", (res) => {
+				if(res){
 
+					commit('homeContent', res.value)
+				}
+			})
+
+			ArangoDB.getCursor("return document('home_template/carousel')", (res) => {
+				if(res){
+					commit('homeCarousel', res.value)
+				}
+			})
+
+		})
+	},
 	getHomeContent({commit, state}){
 		var query = {
 			query : 'return document("home_template/sliderContent")'

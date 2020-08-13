@@ -12,7 +12,14 @@
     v-on:leave="leave"
     v-on:after-leave="afterLeave" >
 
-  <components v-bind:is="nav" :actionNav="actionNav" :setNav="navigation" :minHeight="clientH"/>
+  <components 
+    v-bind:is="nav" 
+    :actionNav="actionNav" 
+    :setNav="navigation" 
+    :minHeight="clientH"
+    :content="_content"
+    :carousel="_carousel"
+  />
 
 </transition>
 <div id='right-sidebar' class='' :class="MenuActive">
@@ -61,6 +68,7 @@ import MobPageTwo from 'pages/mobile2/MobPageTwo.vue'
 import MobPageThree from 'pages/mobile2/MobPageThree.vue'
 import MobPageFour from 'pages/mobile2/MobPageFour.vue'
 import MobPageFive from 'pages/mobile2/MobPageFive.vue'
+import { mapActions, mapState  } from 'vuex'
 
 export default {
   name: 'MobilePage2',
@@ -80,6 +88,7 @@ export default {
       nav : 'PageOne',
       isMenuOpen : false,
       animejs : null,
+      indexPage2 : 1,
       clientH : 0,
       layoutH : 0,
       route : 'Home'
@@ -91,10 +100,54 @@ export default {
               'active-nav' : this.isMenuOpen
           }
       },
+      ...mapState({
+          _content( state ){
+              var obj = { text : '', title : '', type : '', featimg : '', hasCols : false, cols : [] }
+
+              if(state.homeContent != ''){
+                var value = state.homeContent.filter((item, index) => {
+                    if(item.slideId == this.indexPage2){
+                        if(item.type == "text-module"){
+                          Object.assign(obj, { 
+                              text : item.text,
+                              title : item.title,
+                              featimg : item['featured-image'],
+                          })  
+                        }
+                        else if(item.type == "slider-content"){
+
+                        }
+                        else if(item.type == 'three-column-module'){
+                            Object.assign(obj, { 
+                                text : item.text,
+                                title : item.title,
+                                featimg : item['featured-image'],
+                                hasCols : true,
+                                cols : item.columns
+                            }) 
+                        }
+                        return true
+                    }
+                })
+
+              }
+
+              return obj
+          },
+          _carousel(state){
+              var obj = []
+              if(state.carousel != ''){
+                  obj = state.carousel
+              }
+              return obj
+          }
+      })
   },
   methods : {
-     initHeight : function(offet, height){
-      console.log(height)
+      ...mapActions([
+          'initHomeContent',
+      ]),
+      initHeight : function(offet, height){
         this.clientH = height
       },
       openMenu : function(){
@@ -122,11 +175,13 @@ export default {
             }  
           }
       },
-      actionNav : function(page){
+      actionNav : function(page, index){
           this.nav = page
+          this.indexPage2 = index
       },
-      navigation : function(page){
+      navigation : function(page, index){
          this.is_page = page
+         this.indexPage2 = index
       },
       beforeEnter: function (el) {
           // this.clientH = this.$refs.domwrapper.clientHeight;
@@ -168,14 +223,15 @@ export default {
   beforeUpdate : function(){
       
   },
+  created : function(){
+      this.initHomeContent()
+  },
   mounted : function(){
     this.$nextTick(function () {
         this.animejs = anime.timeline({
           easing: 'easeOutExpo',
           duration: 750
         });
-       /* this.layoutH = document.getElementById('page-layout').clientHeight
-        console.log(this.layoutH)*/
     })
   },
 }

@@ -4,21 +4,12 @@
     <div id='page-content'>
        <div class='row content-center items-center' :style="{ height : minHeight + 'px'}">
           <div class='col-md col-xs-12 text-center'>
-            <q-img src="/images/webpage/3D-characters.png" />
+            <q-img :src="content.featimg" />
             </div>
             <div class='col-md col-xs-12 q-px-md text-white text-body1'>
             <div class='row justify-center'>
-              <div>
-                <div class='text-h4 text-weight-bold'>Got an idea to work with? <br /> Feel free to contact us.</div>
-                <p>Call us for more information</p>
-                <p><strong>(033) 500 1749</strong></p>
-                <div class='spacing'></div>
-                <p>Send us an email for any kind of inquiry</p>
-                <p><strong>corporate@summitdefleur.com</strong></p>
-                <div class='spacing'></div>
-                <p>or visit us at our office</p>
-                <p><strong>MCB108 CPBC Centennial Bldg., Fajardo-Arguelles Street, Jaro 5000</strong></p>
-                <p><strong>Iloilo City, Philippines</strong></p>
+              <div v-html='content.text'>
+              
               </div>
             </div>
           </div>
@@ -28,7 +19,13 @@
 </div>
 
 </template>
+<style lang='scss'>
 
+strong{
+  color:#ffff00;
+}
+
+</style>
 <style scoped>
 
 #page-content{
@@ -75,6 +72,14 @@ strong{
   max-width:300px;
   width:70%;
 }
+
+
+@media screen and (orientation:portrait) {
+  #page-content{
+      padding-top:0%;
+  }
+}
+
 @media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
   h4{
     font-size:15pt;
@@ -92,7 +97,8 @@ strong{
   }
 
   .text-h4{
-    font-size:15pt  ;
+    font-size:15pt;
+    line-height:25px;
   }
 }
 </style>
@@ -115,6 +121,9 @@ export default {
     },
     setNav : {
       type : Function,
+    },
+    content : {
+      type : Object
     }
   },
   data () {
@@ -127,7 +136,7 @@ export default {
     }
   },
   created : function(){
-    this.setNav('PageFive')
+    this.setNav('PageFive', 5)
   },
   methods : {
  

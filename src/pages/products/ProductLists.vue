@@ -71,6 +71,7 @@
 }
 .item-wrapper .image-feat{
 	width:100%;
+	text-align:center;
 }
 
 .item-wrapper .image-feat img{
@@ -109,7 +110,11 @@
 	.q-img{
 		max-height :350px;
   		max-width:300px;
-  		width:80%;
+  		width:100%;
+	}
+
+	.item-wrapper .image-feat{
+		width:80%;
 	}
 }
 
@@ -117,7 +122,15 @@
 	.q-img{
 		max-height :400px;
   		max-width:400px;
-  		width:80%;
+  		width:100%;
+	}
+
+	.item-wrapper .image-feat{
+		width:90%;
+	}
+
+	.row .col-md{
+		width:100%;
 	}
 }
 </style>

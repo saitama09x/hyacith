@@ -3,7 +3,7 @@
 <div class='page-overlay' ref="bgaction" >
 <div id='page-content'>
   <div class='row content-center' :style="{ height : minHeight + 'px'}" >
-    <MobileContentSlider2 />
+    <MobileContentSlider2 :carousel="carousel" />
   </div>
 </div>
 
@@ -59,7 +59,10 @@ export default {
     },
     setNav : {
       type : Function,
-    }
+    },
+    carousel : {
+        type : Array
+    },
   },
   data () {
   return {
@@ -70,7 +73,7 @@ export default {
     }
   },
   created : function(){
-    this.setNav('PageTwo')
+    this.setNav('PageTwo', 2)
   },
   methods : {
    

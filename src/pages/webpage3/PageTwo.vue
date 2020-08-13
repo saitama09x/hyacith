@@ -85,7 +85,7 @@ export default {
       }
   },
   created : function(){
-    this.setNav('PageTwo')    
+    this.setNav('PageTwo', 2)    
   },
   mounted : function(){
     this.$nextTick(function () {

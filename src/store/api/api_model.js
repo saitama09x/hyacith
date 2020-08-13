@@ -24,7 +24,7 @@ const getCursor = (query, resolve, error) => {
 			resolve(false)
 		}
    	}).catch(function (error) {
-    	error(error);
+    	resolve(error);
   	})
 
 }

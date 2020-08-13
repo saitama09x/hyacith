@@ -10,6 +10,7 @@ export default function (/* { ssrContext } */) {
       
      },
      state: {
+        token : "",
   	    homeContent : "",
         carousel : ""
   	},

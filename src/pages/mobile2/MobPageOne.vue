@@ -4,14 +4,12 @@
   <div class='row content-center' :style="{ minHeight : minHeight + 'px'}">
     <div class='col-md-12 col-xs-12'>
         <div class='module-image text-center'>
-          <q-img src="/images/webpage/Hyacinth-Logo-Official-white.png" />
+          <q-img :src="content.featimg" />
         </div>  
       </div> 
       <div class='col-md-12 col-xs-12'>
-        <div class='text-module text-center'>
-          <p>Creating a whole new experience</p>
-          <p>for you and your business</p>
-        </div>
+         <div class='text-module text-center' v-html="content.text">          
+      </div>
     </div>
   </div>
 </div>
@@ -48,6 +46,10 @@
     font-size:15pt;
   }
 
+  .module-image{
+    padding-top:10%;
+  }
+
 }
 
 </style>
@@ -75,7 +77,10 @@ export default {
     },
     setNav : {
         type : Function,
-    }
+    },
+    content : {
+        type : Object
+    },
   },
   data () {
   return {
@@ -94,7 +99,7 @@ export default {
       }
   },
   created : function(){
-      this.setNav('PageOne')
+      this.setNav('PageOne', 1)
   },
   methods : {
       openMenu : function(){

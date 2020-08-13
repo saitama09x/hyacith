@@ -125,7 +125,16 @@
 
 #footer{
   bottom:0px;
-  height: 60px;
+  height: 50px;
+}
+
+.product-layout #footer{
+  bottom:25px;
+  height:auto;
+}
+
+#footer .arrow{
+  font-size: 20pt;
 }
 
 }

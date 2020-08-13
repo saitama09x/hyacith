@@ -4,16 +4,15 @@
 <div id='page-content'>
   <div class='row content-center' :style="{ height : minHeight + 'px'}">
   <div class='col-md col-xs-12 text-center top-image'>
-    <q-img src="/images/webpage/3D Illustration-Product Development-Skin-01.png" :transition="'slide-left'">
+    <q-img :src="content.featimg" :transition="'slide-left'">
       <template v-slot:loading>
         <q-spinner-gears color="white" />
       </template>
    </q-img>
   </div>
   <div class='col-md col-xs-12 q-pa-md q-mx-auto text-white'>
-    <h4 class="q-my-sm">We Design Stuff to create better experience</h4>
-    <p>We are a group of young creative individuals who has passion in creating better experiences for our clients as we see to be better creators for them. What to know more about us?</p>
-    <p>Check our portfolio through these links:</p>
+    <h4 class="q-my-sm">{{content.title}}</h4>
+    <div v-html="content.text"></div>
     <div class='widget widget-2 text-left social-icons'>  
       <div class='module-icons'>
         <i class="lab la-facebook"></i>
@@ -65,6 +64,7 @@
 @media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
   h4{
     font-size:15pt;
+    line-height:25px;
   }
   #page-content{
     padding-top:0%;
@@ -99,6 +99,9 @@ export default {
     },
     setNav : {
       type : Function,
+    },
+    content : {
+        type : Object
     }
   },
   data () {
@@ -110,7 +113,7 @@ export default {
     }
   },
   created : function(){
-    this.setNav('PageThree')
+    this.setNav('PageThree', 3)
   },
   methods : {
  

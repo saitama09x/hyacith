@@ -4,9 +4,9 @@
   <div class='section section-0 margin-center'>
       <div class='module margin-center'>
       <div class='module-image margin-center page-1'>
-        <img src="/images/webpage/Hyacinth-Logo-Official-white.png" />
+        <q-img :src="content.featimg" />
       </div>  
-      <div class='text-module text-center' v-html="content">          
+      <div class='text-module text-center' v-html="content.text">          
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@ export default {
       }
     },
     content : {
-        type : String
+        type : Object
     },
     is_page : {
       type : String,
@@ -76,7 +76,7 @@ export default {
     minHeight : 0,
   },
   created : function(){
-    this.setNav('PageOne')
+      this.setNav('PageOne', 1)
   },
   methods : {
       goToPage : function(){

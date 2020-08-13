@@ -4,37 +4,18 @@
 		<div id='sliders'>
         <div class='slider-items'>
 			<transition :name='sliderName' :duration="1000">
-				  <MobileSliderPage v-if="sliderIndex == 0" :key="0">
+				  <MobileSliderPage v-for="(item, index) in carousel" :key="index" v-if="sliderIndex == index">
             <template v-slot:slider-image>
-                <q-img src="/images/webpage/UI-icon.png"/>
-            </template>
-            <template v-slot:slider-text>
-              <div>
-                <div class="text-h6 text-center">Data Research</div>
-                <p class="text-white text-body1">We make our user interface design from scratch. We give better insights in designing, whether on web or in app.</p>
-              </div>
-            </template>
-          </MobileSliderPage>
-          <MobileSliderPage v-if="sliderIndex == 1" :key="1">
-            <template v-slot:slider-image>
-                <q-img src="/images/webpage/UX-icon.png" />
-            </template>
-            <template v-slot:slider-text>
-              <div>
-                <div class="text-h6 text-center">User Interface Design</div>
-                <p class="text-white text-body2">We make our user interface design from scratch. We give better insights in designing, whether on web or in app.123</p>
-              </div>
-            </template>
-          </MobileSliderPage>
-          <MobileSliderPage v-if="sliderIndex == 2" :key="2">
-            <template v-slot:slider-image>
-                <q-img src="/images/webpage/Data-research-icon.png" />
-            </template>
-            <template v-slot:slider-text>
-                <div>
-                <div class="text-h6 text-center">User Experience Design</div>
-                <p class="text-white text-body1">We make our user interface design from scratch. We give better insights in designing, whether on web or in app.1234</p>
+                <div :class="'image image-' + sliderIndex">
+                  <q-img :src="item['featured-image']"/>
                 </div>
+            </template>
+            <template v-slot:slider-text>
+              <div>
+                <div class="text-h6 text-center">{{item.title}}</div>
+                <div class="text-white text-body1" v-html="item.text">
+                </div>
+              </div>
             </template>
           </MobileSliderPage>
 			</transition>
@@ -104,7 +85,7 @@
     width: 80%;
 }
 .slider-wrapper .controls .las{
-	font-size: 21pt;
+	font-size: 15pt;
   color: white;
   margin:0px 24px;
 }
@@ -195,7 +176,7 @@
 @media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
   
   #sliders{
-    height:250px;
+    height:210px;
   }
 
   #sliders .q-img{
@@ -203,8 +184,17 @@
   }
 
   #sliders .slider-items{
-    align-items: center;
+    align-items: flex-start;
     height: 100%;
+  }
+
+  #sliders .image{
+      max-width:300px;
+      max-height:300px;
+  }
+
+  .slider-wrapper .control-wrapper{
+      bottom: 14%;
   }
 
 }
@@ -213,6 +203,10 @@
 
   #sliders .q-img{
       width: 50%;
+  }
+
+  #sliders .image{
+      padding: 20px 0px;
   }
 
 }

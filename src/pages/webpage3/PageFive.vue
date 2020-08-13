@@ -138,7 +138,7 @@ export default {
       }
   },
   created : function(){
-    this.setNav('PageFive')
+    this.setNav('PageFive', 5)
   },
   mounted : function(){
 

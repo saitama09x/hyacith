@@ -5,14 +5,13 @@
   <div class="row row-modules margin-center">
     <div class='col'>
     <div class='text-module'>
-		<h1>We Design Stuff to create better experience</h1>
-		<p>We are a group of young creative individuals who has passion in creating better experiences for our clients as we see to be better creators for them. What to know more about us?</p>
-    <p>Check our portfolio through these links:</p>
+		<h1>{{content.title}}</h1>
+		<div v-html="content.text"></div>
 	</div>
 	</div>
 	<div class='col'>
 	<div class='module module-image margin-center page-3'>
-      <q-img src="/images/webpage/3D Illustration-Product Development-Skin-01.png" :transition="'slide-left'" >
+      <q-img :src="content.featimg" :transition="'slide-left'" >
         <template v-slot:loading>
           <q-spinner-gears color="white" />
         </template>
@@ -81,6 +80,9 @@ export default {
 	      type : String,
 	      default : ''
 	    },
+      content : {
+        type : Object
+      },
 	    openMenu : {
 	      type : Function,
 	      default : () => {}
@@ -103,7 +105,7 @@ export default {
       }
   },
 	created : function(){
-		this.setNav('PageThree')    
+		this.setNav('PageThree', 3)    
 	},
 }
 </script>

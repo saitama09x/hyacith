@@ -4,31 +4,17 @@
 		<div id='sliders'>
       <div class='slider-items'>
 	   <transition :name='sliderName' :duration="1000">
-				  <MobileSliderPage v-if="sliderIndex == 0" :key="0">
+				  <MobileSliderPage v-for="(item, index) in carousel" :key="index" v-if="sliderIndex == index">
             <template v-slot:slider-image>
-                <div class='q-mt-lg'>
-                  <q-img src="/images/webpage/hyacinth-mockups.png" />
+                <div :class="'image-' + sliderIndex">
+                  <q-img :src="item.item_content.image" />
                 </div>
             </template>
             <template v-slot:slider-text>
                 <div class='text-module q-pa-md'>
-                  <div class="text-h6 text-center">Responsive Design anywhere you wish</div>
+                  <div class="text-h6 text-center q-my-lg">{{item.item_content.header}}</div>
                   <div class="row justify-center">
                   <q-btn rounded color="white" text-color="black" label="More" class="readbtn"/>
-                  </div>
-                </div>
-            </template>
-          </MobileSliderPage>
-          <MobileSliderPage v-if="sliderIndex == 1" :key="1">
-            <template v-slot:slider-image>
-                <q-img src="/images/webpage/IBC-tablet-mockup.png" :ratio="1" style="max-width:350px;"/>
-            </template>
-            <template v-slot:slider-text>
-                 <div class='text-module q-px-md'>
-                  <div class="text-h6 text-center">Application Design that meets your business needs
-                    <div class="row justify-center">
-                    <q-btn rounded color="white" text-color="black" label="More" class="readbtn"/>
-                    </div>
                   </div>
                 </div>
             </template>
@@ -46,6 +32,17 @@
 	</div>
 </div>
 </template>
+<style lang="scss">
+
+
+.readbtn .q-btn__wrapper{
+  font-size:16px;
+  padding: 11px 54px 10px 54px;
+  min-height:0px;
+}
+
+
+</style>
 <style scoped>
 
 .q-img{
@@ -99,7 +96,7 @@
 }
 
 .slider-wrapper .controls .las{
-	font-size: 21pt;
+	font-size: 15pt;
   color: white;
   margin:0px 20px;
 }
@@ -162,6 +159,11 @@
     width:50%;
   }
 
+  #sliders .image-1{
+    width:70%;
+    margin:auto;
+  }
+
   .slidernext-enter-active {
     position:absolute;
     transition: transform .5s;
@@ -198,6 +200,20 @@
 }
 
 @media screen and (orientation:portrait) {
+
+  #sliders{
+    height: 550px;
+  }
+
+  #sliders .image-0{
+    padding-top:24px;
+  }
+
+  #sliders .image-1{
+      max-width:300px;
+      max-height:300px;
+      margin:0 auto;
+  }
 
   .slidernext-enter-active {
     position:absolute;
@@ -251,6 +267,10 @@
 
   .q-img{
     width:60%;
+  }
+
+  #sliders .image-1{
+    width:85%;
   }
 
 }

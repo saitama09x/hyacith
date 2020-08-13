@@ -124,7 +124,7 @@ export default {
         animejs : null,
         isMenuOpen : false,
         indexPage : 0,
-        indexPage2 : 0,
+        indexPage2 : 1,
         slideType : 'slideUp',
         clientH : 0,
         route : 'Home',
@@ -148,20 +148,37 @@ export default {
       },
       ...mapState({
           _content( state ){
-              var obj = { text : '' }
+              var obj = { text : '', title : '', type : '', featimg : '', hasCols : false, cols : [] }
 
               if(state.homeContent != ''){
                 var value = state.homeContent.filter((item, index) => {
-                    if(index == 0){
+                    if(item.slideId == this.indexPage2){
+                        if(item.type == "text-module"){
+                          Object.assign(obj, { 
+                              text : item.text,
+                              title : item.title,
+                              featimg : item['featured-image'],
+                          })  
+                        }
+                        else if(item.type == "slider-content"){
+
+                        }
+                        else if(item.type == 'three-column-module'){
+                            Object.assign(obj, { 
+                                text : item.text,
+                                title : item.title,
+                                featimg : item['featured-image'],
+                                hasCols : true,
+                                cols : item.columns
+                            }) 
+                        }
                         return true
                     }
                 })
 
-                Object.assign(obj, { text : value[0].text })
-
               }
 
-              return obj.text
+              return obj
           },
           _carousel(state){
               var obj = []
@@ -174,21 +191,18 @@ export default {
   },
   methods : {
        ...mapActions([
-          'getHomeContent',
-          'getHomeCarousel'
+          'initHomeContent',
       ]),
       initHeight : function(offet, height){
         this.clientH = height
-      },
-      initIndexPage : function(index){
-        this.indexPage = index
       },
       actionNav : function(page, index){
           this.nav = page
           this.indexPage2 = index
       },
-  	  navigation : function(page){
+  	  navigation : function(page, index){
   			 this.is_page = page
+         this.indexPage2 = index
   	  },
       openMenu : function(){
           if(this.isMenuOpen == false){
@@ -275,19 +289,14 @@ export default {
       }
   },
   created : function(){
-      this.getHomeContent()
-      this.getHomeCarousel()
+      this.initHomeContent()
   },
   mounted : function(){
   	this.$nextTick(function () {
-        
         this.animejs = anime.timeline({
           easing: 'easeOutExpo',
           duration: 750
         });
-        
-        
-
   	})
   },
   beforeUpdate : function(){

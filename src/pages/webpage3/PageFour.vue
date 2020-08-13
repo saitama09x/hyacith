@@ -3,38 +3,14 @@
 
 <div id='page-content'>
 <div class='section section-0 q-pa-md margin-center'>
-<h1 class='section-title'>We provide excellent services with professional practice.</h1>
-<div class="row row-modules margin-center">
-<div class='col'>
+<h1 class='section-title'>{{content.title}}</h1>
+<div class="row row-modules margin-center" >
+<div class='col' v-for="col in content.cols">
 <q-card class="service">
-<img src="/images/webpage/UI-icon.png">
+<q-img :src="col['featured-image']" />
 <q-card-section>
-<div class="text-h6">User Interface Design</div>
-<div class='text-module'>
-<p>We make our user interface design from scratch. We give better insights in designing, whether on web or in app.</p>
-</div>
-</q-card-section>
-</q-card>
-</div>
-<div class='col'>
-<q-card  class="service">
-<img src="/images/webpage/UX-icon.png">
-<q-card-section>
-<div class="text-h6">User Interface Design</div>
-<div class='text-module'>
-<p>We make our user interface design from scratch. We give better insights in designing, whether on web or in app.</p>
-</div>
-</q-card-section>
-</q-card>
-</div>
-<div class='col'>
-<q-card  class="service">
-<img src="/images/webpage/Data-research-icon.png">
-<q-card-section>
-<div class="text-h6">User Interface Design</div>
-<div class='text-module'>
-<p>We make our user interface design from scratch. We give better insights in designing, whether on web or in app.</p>
-</div>
+<div class="text-h6">{{col.title}}</div>
+<div class='text-module' v-html="col.text"></div>
 </q-card-section>
 </q-card>
 </div>
@@ -68,9 +44,10 @@
 .service.q-card{
   background:#fff0;
   box-shadow:unset;
+  text-align:center;
 }
 
-.service.q-card img{
+.service.q-card .q-img{
   width:30%;
 }
 
@@ -118,6 +95,9 @@ export default {
       type : String,
       default : ''
     },
+    content : {
+      type : Object
+    },
     initIndexPage : {
         type : Function,
     },
@@ -143,7 +123,7 @@ export default {
       }
   },
   created : function(){
-    this.setNav('PageFour')    
+    this.setNav('PageFour', 4)    
   },
   mounted : function(){
 

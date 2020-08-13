@@ -2,14 +2,14 @@
 <div id="page">
 <div class='page-overlay' ref="bgaction" >
     <div id='page-content'>
-      <div class='row content-center' :style="{ height : minHeight + 'px'}">
+      <div class='row content-center items-center' :style="{ minHeight : minHeight + 'px'}">
        <div class='col-md-12 col-xs-12'>
           <div class='module text-module q-mx-auto'>
-              <h4 class='text-center'>We provide excellent services with professional practice.</h4>
+              <h4 class='text-center'>{{content.title}}</h4>
           </div>
       </div>
       <div class='col-md-12 col-xs-12'>
-          <MobileContentSlider :carousel="carousel" />
+          <MobileContentSlider :carousel="content.cols" />
       </div>
       </div>
     </div>
@@ -23,7 +23,6 @@
 #page-content{
   height: 100%;
   width: 100%;
-  padding-top:2%;
 }
 
 #page .page-overlay{
@@ -41,6 +40,7 @@
   font-size: 20pt;
   font-weight: bold;
   margin:0px;
+
 }
 
 .section .module-image{
@@ -49,6 +49,19 @@
 
 .social-icons{
   font-size:20pt;
+}
+
+@media screen and (orientation:landscape) {
+  .text-module h4{
+    padding-top:10%;
+  }
+}
+
+@media (max-width:980px) and (min-width:720px) and (orientation:landscape) {
+.text-module h4{
+  padding-top:15%;
+}
+
 }
 </style>
 <script>
@@ -72,6 +85,9 @@ export default {
     },
     setNav : {
       type : Function,
+    },
+    content : {
+        type : Object
     }
   },
   data () {
@@ -84,7 +100,7 @@ export default {
     }
   },
   created : function(){
-    this.setNav('PageFour')
+    this.setNav('PageFour', 4)
   },
   methods : {
  
